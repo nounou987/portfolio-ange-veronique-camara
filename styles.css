@@ -1,16 +1,16 @@
 :root {
-  --bg: #07111f;
-  --bg-deep: #030913;
-  --surface: rgba(8, 18, 34, 0.78);
-  --surface-strong: rgba(6, 13, 26, 0.9);
-  --surface-soft: rgba(15, 32, 56, 0.58);
-  --text-primary: #f5fbff;
-  --text-muted: #c5d4e8;
-  --text-secondary: #8ca0ba;
-  --accent: #57c7ff;
-  --accent-strong: #2c8dff;
-  --accent-soft: rgba(87, 199, 255, 0.18);
-  --border: rgba(125, 162, 205, 0.18);
+  --bg: #08111d;
+  --bg-deep: #030815;
+  --surface: rgba(10, 20, 38, 0.82);
+  --surface-strong: rgba(7, 15, 29, 0.92);
+  --surface-soft: rgba(16, 32, 56, 0.62);
+  --text-primary: #f7fbff;
+  --text-muted: #c8d6e8;
+  --text-secondary: #90a5c0;
+  --accent: #5d8cff;
+  --accent-strong: #2ed3c6;
+  --accent-soft: rgba(93, 140, 255, 0.18);
+  --border: rgba(130, 159, 210, 0.18);
   --shadow: 0 35px 90px rgba(0, 0, 0, 0.28);
   color-scheme: dark;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -31,10 +31,10 @@ body {
   min-height: 100vh;
   color: var(--text-primary);
   background:
-    radial-gradient(circle at 12% 10%, rgba(68, 158, 255, 0.2), transparent 28%),
-    radial-gradient(circle at 88% 18%, rgba(93, 208, 255, 0.18), transparent 24%),
-    radial-gradient(circle at 50% 100%, rgba(30, 101, 255, 0.12), transparent 35%),
-    linear-gradient(180deg, #07111f 0%, #040a14 48%, #02060d 100%);
+    radial-gradient(circle at 12% 10%, rgba(93, 140, 255, 0.2), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(46, 211, 198, 0.14), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(36, 82, 194, 0.14), transparent 35%),
+    linear-gradient(180deg, #08111d 0%, #050b16 48%, #03060d 100%);
   overflow-x: hidden;
 }
 
@@ -560,58 +560,39 @@ img {
 }
 
 .about-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
 }
 
-.about-summary-card {
-  min-height: 100%;
+.about-card {
+  padding: 2.2rem;
+}
+
+.about-intro {
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+  max-width: 70ch;
 }
 
 .info-list {
   display: grid;
-  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 2rem;
 }
 
 .info-item {
   display: grid;
-  grid-template-columns: minmax(130px, 180px) minmax(0, 1fr);
-  gap: 0.75rem;
+  grid-template-columns: minmax(120px, 165px) minmax(0, 1fr);
+  gap: 0.6rem;
   color: var(--text-muted);
   align-items: start;
   word-break: break-word;
+  font-size: 1.02rem;
 }
 
 .info-item span {
   color: #89ddff;
   font-weight: 700;
-}
-
-.about-stats {
-  display: grid;
-  gap: 1.2rem;
-}
-
-.stat-block {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 1rem;
-  align-items: center;
-  padding: 1.5rem;
-  border-radius: 24px;
-  background: linear-gradient(180deg, rgba(10, 21, 38, 0.8), rgba(5, 13, 24, 0.95));
-  border: 1px solid rgba(134, 183, 233, 0.12);
-}
-
-.stat-icon {
-  display: grid;
-  place-items: center;
-  width: 72px;
-  height: 72px;
-  border-radius: 22px;
-  background: rgba(87, 199, 255, 0.1);
-  color: #8ae4ff;
-  font-size: 1.45rem;
 }
 
 .services-grid {
@@ -750,7 +731,7 @@ img {
 }
 
 .contact-grid {
-  grid-template-columns: 1fr 0.9fr 1.2fr;
+  grid-template-columns: 1fr;
   align-items: stretch;
 }
 
@@ -763,10 +744,31 @@ img {
   text-decoration: underline;
 }
 
-.contact-actions {
+.contact-master-card {
   display: grid;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.contact-master-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.7fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  align-content: start;
+  margin-top: 1.35rem;
+}
+
+.contact-side-panel {
+  padding: 1.4rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(134, 183, 233, 0.12);
 }
 
 .qr-card {
@@ -783,6 +785,10 @@ img {
   border-radius: 22px;
   border: 1px solid rgba(135, 187, 238, 0.16);
   min-height: 320px;
+}
+
+.contact-map-full {
+  margin-top: 0;
 }
 
 .map-frame iframe {
@@ -973,6 +979,11 @@ img {
   .contact-grid,
   .cv-content,
   .cv-skill-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-master-top,
+  .info-list {
     grid-template-columns: 1fr;
   }
 
